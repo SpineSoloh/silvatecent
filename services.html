@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services | SilvaTech Institute - Technical Excellence</title>
+    <title>Our Services | Silva Tec Enterprises - Technical Excellence</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="services.css">
@@ -21,12 +21,17 @@
                 </div>
                 
                 <div class="logo">
+                    <!-- Logo Image -->
                     <div class="logo-image">
-                        <img src="https://via.placeholder.com/50x50/1a5276/ffffff?text=ST" alt="SilvaTech Logo" id="logo-img">
+                        <img src="https://via.placeholder.com/50x50/1a5276/ffffff?text=STE" alt="Silva Tec Enterprises Logo" id="logo-img">
                     </div>
-                    <div>
-                        <div class="logo-text">Silva<span>Tech</span></div>
-                        <div class="logo-subtitle">Institute of Technical Excellence</div>
+                    <div class="logo-text-container">
+                        <div class="logo-text">
+                            <span class="logo-part-1">Silva</span>
+                            <span class="logo-part-2">Tec</span>
+                            <span class="logo-part-3">Enterprises</span>
+                        </div>
+                        <div class="logo-subtitle">The Smart Choice</div>
                     </div>
                 </div>
             </div>
@@ -36,15 +41,15 @@
             </button>
             
             <nav id="mainNav">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="index.html#about">About</a></li>
-                    <li><a href="#services-hero" class="active">Services</a></li>
-                    <li><a href="index.html#training">Training</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
-                    <li class="nav-samtech-link">
-                        <a href="https://www.technosamservices.com/" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> Visit Technosam Services
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="index.html#about" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#services-hero" class="nav-link active">Services</a></li>
+                    <li class="nav-item"><a href="index.html#training" class="nav-link">Training</a></li>
+                    <li class="nav-item"><a href="index.html#contact" class="nav-link">Contact</a></li>
+                    <li class="nav-item nav-special">
+                        <a href="https://www.technosamservices.com/" target="_blank" class="nav-special-link">
+                            <i class="fas fa-external-link-alt"></i> Technosam
                         </a>
                     </li>
                 </ul>
@@ -52,291 +57,347 @@
         </div>
     </header>
 
-    <!-- Hero Slider Section -->
+    <!-- Services Hero Section -->
     <section class="services-hero" id="services-hero">
-        <div class="hero-slider">
-            <!-- Slide 1 - Metal Work -->
-            <div class="slide active" style="background-image: linear-gradient(rgba(26, 82, 118, 0.7), rgba(26, 82, 118, 0.7)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');">
-                <div class="slide-content">
-                    <h1 class="slide-title">Metal Work Services</h1>
-                    <p class="slide-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla facilisi. Sed euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl eu nisl.</p>
-                    <a href="#metal-work" class="slide-cta">Explore Metal Work <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-            
-            <!-- Slide 2 - Plumbing -->
-            <div class="slide" style="background-image: linear-gradient(rgba(26, 82, 118, 0.7), rgba(26, 82, 118, 0.7)), url('https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');">
-                <div class="slide-content">
-                    <h1 class="slide-title">Plumbing Solutions</h1>
-                    <p class="slide-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                    <a href="#plumbing" class="slide-cta">Explore Plumbing <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-            
-            <!-- Slide 3 - Mechanics -->
-            <div class="slide" style="background-image: linear-gradient(rgba(26, 82, 118, 0.7), rgba(26, 82, 118, 0.7)), url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');">
-                <div class="slide-content">
-                    <h1 class="slide-title">Mechanical Services</h1>
-                    <p class="slide-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                    <a href="#mechanics" class="slide-cta">Explore Mechanics <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-            
-            <!-- Slide 4 - Civil Works -->
-            <div class="slide" style="background-image: linear-gradient(rgba(26, 82, 118, 0.7), rgba(26, 82, 118, 0.7)), url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');">
-                <div class="slide-content">
-                    <h1 class="slide-title">Civil Works & Construction</h1>
-                    <p class="slide-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                    <a href="#civil-works" class="slide-cta">Explore Civil Works <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-            
-            <!-- Slide 5 - Training Services -->
-            <div class="slide" style="background-image: linear-gradient(rgba(26, 82, 118, 0.7), rgba(26, 82, 118, 0.7)), url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');">
-                <div class="slide-content">
-                    <h1 class="slide-title">Technical Training Services</h1>
-                    <p class="slide-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-                    <a href="#training-services" class="slide-cta">Explore Training <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
-            
-            <!-- Slider Controls -->
-            <button class="slider-control prev" id="prevSlide">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="slider-control next" id="nextSlide">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-            
-            <!-- Slider Dots -->
-            <div class="slider-dots">
-                <span class="dot active" data-slide="0"></span>
-                <span class="dot" data-slide="1"></span>
-                <span class="dot" data-slide="2"></span>
-                <span class="dot" data-slide="3"></span>
-                <span class="dot" data-slide="4"></span>
-            </div>
-            
-            <!-- Autoplay Indicator -->
-            <div class="autoplay-control">
-                <button id="toggleAutoplay">
-                    <i class="fas fa-pause" id="autoplayIcon"></i>
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Details Section -->
-    <section class="services-details">
         <div class="container">
-            <div class="section-title">
-                <h2>Our Professional Services</h2>
-                <p>Comprehensive technical solutions delivered with expertise and precision</p>
-            </div>
-            
-            <!-- Metal Work Service -->
-            <div class="service-detail-card" id="metal-work">
-                <div class="service-detail-content">
-                    <div class="service-detail-text">
-                        <h3>Metal Work & Fabrication</h3>
-                        <p class="service-intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        
-                        <div class="service-features">
-                            <div class="feature">
-                                <i class="fas fa-wrench"></i>
-                                <h4>Custom Fabrication</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-fire"></i>
-                                <h4>Welding Services</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-industry"></i>
-                                <h4>Structural Steel</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
-                            </div>
-                        </div>
-                        
-                        <div class="service-benefits">
-                            <h4>Why Choose Our Metal Work?</h4>
-                            <ul>
-                                <li><i class="fas fa-check-circle"></i> Lorem ipsum dolor sit amet, consectetur adipiscing</li>
-                                <li><i class="fas fa-check-circle"></i> Sed do eiusmod tempor incididunt ut labore</li>
-                                <li><i class="fas fa-check-circle"></i> Ut enim ad minim veniam, quis nostrud exercitation</li>
-                                <li><i class="fas fa-check-circle"></i> Duis aute irure dolor in reprehenderit in voluptate</li>
-                            </ul>
-                        </div>
+            <div class="services-hero-content">
+                <h1>Our Professional Services</h1>
+                <p class="hero-subtitle">Comprehensive technical solutions delivered with expertise, precision, and innovation since 2015.</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Projects Completed</span>
                     </div>
-                    
-                    <div class="service-detail-image">
-                        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Metal Work">
+                    <div class="stat">
+                        <span class="stat-number">100+</span>
+                        <span class="stat-label">Happy Clients</span>
                     </div>
-                </div>
-                
-                <div class="service-cta">
-                    <a href="contact.html" class="cta-button">Request Metal Work Service</a>
-                    <a href="#" class="cta-button secondary">View Portfolio</a>
-                </div>
-            </div>
-            
-            <!-- Plumbing Service -->
-            <div class="service-detail-card" id="plumbing">
-                <div class="service-detail-content">
-                    <div class="service-detail-text">
-                        <h3>Plumbing & Pipe Fitting</h3>
-                        <p class="service-intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        
-                        <div class="service-features">
-                            <div class="feature">
-                                <i class="fas fa-home"></i>
-                                <h4>Residential Plumbing</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-building"></i>
-                                <h4>Commercial Plumbing</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-tools"></i>
-                                <h4>Emergency Repairs</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
-                            </div>
-                        </div>
+                    <div class="stat">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Expert Technicians</span>
                     </div>
-                    
-                    <div class="service-detail-image">
-                        <img src="https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Plumbing Services">
+                    <div class="stat">
+                        <span class="stat-number">8</span>
+                        <span class="stat-label">Years Experience</span>
                     </div>
-                </div>
-                
-                <div class="service-cta">
-                    <a href="contact.html" class="cta-button">Request Plumbing Service</a>
-                    <a href="#" class="cta-button secondary">Get Free Quote</a>
-                </div>
-            </div>
-            
-            <!-- Mechanics Service -->
-            <div class="service-detail-card" id="mechanics">
-                <div class="service-detail-content">
-                    <div class="service-detail-text">
-                        <h3>Mechanical Services</h3>
-                        <p class="service-intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        
-                        <div class="service-features">
-                            <div class="feature">
-                                <i class="fas fa-car"></i>
-                                <h4>Automotive Repair</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-cogs"></i>
-                                <h4>Industrial Machinery</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-search"></i>
-                                <h4>Diagnostics</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="service-detail-image">
-                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mechanical Services">
-                    </div>
-                </div>
-                
-                <div class="service-cta">
-                    <a href="contact.html" class="cta-button">Request Mechanical Service</a>
-                    <a href="#" class="cta-button secondary">Schedule Maintenance</a>
-                </div>
-            </div>
-            
-            <!-- Civil Works Service -->
-            <div class="service-detail-card" id="civil-works">
-                <div class="service-detail-content">
-                    <div class="service-detail-text">
-                        <h3>Civil Works & Construction</h3>
-                        <p class="service-intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        
-                        <div class="service-features">
-                            <div class="feature">
-                                <i class="fas fa-hard-hat"></i>
-                                <h4>Building Construction</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-road"></i>
-                                <h4>Road Works</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-drafting-compass"></i>
-                                <h4>Structural Engineering</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="service-detail-image">
-                        <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Civil Works">
-                    </div>
-                </div>
-                
-                <div class="service-cta">
-                    <a href="contact.html" class="cta-button">Request Civil Works Service</a>
-                    <a href="#" class="cta-button secondary">View Projects</a>
-                </div>
-            </div>
-            
-            <!-- Training Services -->
-            <div class="service-detail-card" id="training-services">
-                <div class="service-detail-content">
-                    <div class="service-detail-text">
-                        <h3>Technical Training Services</h3>
-                        <p class="service-intro">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                        
-                        <div class="service-features">
-                            <div class="feature">
-                                <i class="fas fa-graduation-cap"></i>
-                                <h4>Workshop Training</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-certificate"></i>
-                                <h4>Certification Programs</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-briefcase"></i>
-                                <h4>Corporate Training</h4>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="service-detail-image">
-                        <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Training Services">
-                    </div>
-                </div>
-                
-                <div class="service-cta">
-                    <a href="index.html#training" class="cta-button">Explore Training Programs</a>
-                    <a href="apply.php" class="cta-button secondary">Apply for Training</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- Services Introduction -->
+    <section class="services-intro">
+        <div class="container">
+            <div class="intro-content">
+                <h2>Excellence in Technical Services</h2>
+                <p>At Silva Tec Enterprises, we pride ourselves on delivering top-quality technical services across multiple disciplines. Our team of certified professionals combines decades of experience with cutting-edge technology to provide solutions that exceed expectations.</p>
+                <p>Each service is backed by our commitment to quality, safety, and customer satisfaction. Browse through our portfolio of services to see how we can help with your next project.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Metal Work Service -->
+    <!-- Gallery Dots for Metal Work (6 slides) -->
+<div class="gallery-dots">
+    <span class="dot active" data-slide="0"></span>
+    <span class="dot" data-slide="1"></span>
+    <span class="dot" data-slide="2"></span>
+    <span class="dot" data-slide="3"></span>
+    <span class="dot" data-slide="4"></span>
+    <span class="dot" data-slide="5"></span>
+</div>
+
+    <!-- Plumbing Service -->
+    <section class="service-section alt-bg" id="plumbing">
+        <div class="container">
+            <div class="service-header">
+                <div class="service-icon-large">
+                    <i class="fas fa-faucet"></i>
+                </div>
+                <h2>Plumbing & Pipe Fitting</h2>
+                <p class="service-description">Comprehensive plumbing solutions for residential, commercial, and industrial properties. From installation to maintenance and emergency repairs, we ensure efficient water systems that stand the test of time.</p>
+            </div>
+            
+            <!-- Service Sliding Gallery -->
+            <div class="service-gallery">
+                <div class="gallery-container">
+                    <div class="gallery-slider">
+                        <!-- Slide 1 -->
+                        <div class="gallery-slide active">
+                            <img src="masonryplumbing.jpg" alt="Residential Plumbing">
+                            <div class="slide-caption">
+                                <h4>Residential Plumbing</h4>
+                                <p>Complete home plumbing solutions including installation, repair, and maintenance</p>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="gallery-slide">
+                            <img src="complumb.jpg" alt="Commercial Plumbing">
+                            <div class="slide-caption">
+                                <h4>Commercial Plumbing</h4>
+                                <p>Large-scale commercial plumbing systems for offices, hotels, and institutions</p>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="gallery-slide">
+                            <img src="complumb.jpg" alt="Pipe Installation">
+                            <div class="slide-caption">
+                                <h4>Pipe Installation</h4>
+                                <p>Professional pipe installation using high-quality materials and techniques</p>
+                            </div>
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="gallery-slide">
+                            <img src="https://images.unsplash.com/photo-1581093450795-2a6d81f2f37b?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Emergency Repairs">
+                            <div class="slide-caption">
+                                <h4>Emergency Repairs</h4>
+                                <p>24/7 emergency plumbing services for urgent repairs and maintenance</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Gallery Controls -->
+                    <button class="gallery-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="gallery-next"><i class="fas fa-chevron-right"></i></button>
+                    
+                    <!-- Gallery Dots -->
+                    <div class="gallery-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                        <span class="dot" data-slide="3"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-features-grid">
+                <div class="feature">
+                    <i class="fas fa-home"></i>
+                    <h4>Residential Services</h4>
+                    <p>Complete plumbing solutions for homes, apartments, and residential complexes</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-building"></i>
+                    <h4>Commercial Projects</h4>
+                    <p>Large-scale plumbing installations for commercial and industrial properties</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-tools"></i>
+                    <h4>Maintenance</h4>
+                    <p>Regular maintenance services to prevent issues and extend system lifespan</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h4>Emergency Response</h4>
+                    <p>24/7 emergency plumbing services for urgent repairs and leak detection</p>
+                </div>
+            </div>
+            
+            <div class="service-cta">
+                <a href="contact.html" class="cta-button">Request Plumbing Service</a>
+                <a href="tel:+25429569748" class="cta-button secondary">
+                    <i class="fas fa-phone"></i> Emergency Call
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mechanics Service -->
+    <section class="service-section" id="mechanics">
+        <div class="container">
+            <div class="service-header">
+                <div class="service-icon-large">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h2>Mechanical Services</h2>
+                <p class="service-description">Professional mechanical solutions for automotive, industrial machinery, and mechanical systems. Our certified technicians provide diagnostics, repairs, and maintenance to keep your equipment running smoothly.</p>
+            </div>
+            
+            <!-- Service Sliding Gallery -->
+            <div class="service-gallery">
+                <div class="gallery-container">
+                    <div class="gallery-slider">
+                        <!-- Slide 1 -->
+                        <div class="gallery-slide active">
+                            <img src="automotive3.jpg" alt="Automotive Repair">
+                            <div class="slide-caption">
+                                <h4>Automotive Repair</h4>
+                                <p>Complete vehicle maintenance, repair, and servicing for all makes and models</p>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="gallery-slide">
+                            <img src="industrialm1.jpg" alt="Industrial Machinery">
+                            <div class="slide-caption">
+                                <h4>Industrial Machinery</h4>
+                                <p>Repair and maintenance of industrial equipment and manufacturing machinery</p>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="gallery-slide">
+                            <img src="masonry.JPG" alt="Engine Diagnostics">
+                            <div class="slide-caption">
+                                <h4>Engine Diagnostics</h4>
+                                <p>Advanced engine diagnostic services using state-of-the-art equipment</p>
+                            </div>
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="gallery-slide">
+                            <img src="sysopt.jpg" alt="System Optimization">
+                            <div class="slide-caption">
+                                <h4>System Optimization</h4>
+                                <p>Performance optimization and efficiency improvements for mechanical systems</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Gallery Controls -->
+                    <button class="gallery-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="gallery-next"><i class="fas fa-chevron-right"></i></button>
+                    
+                    <!-- Gallery Dots -->
+                    <div class="gallery-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                        <span class="dot" data-slide="3"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-features-grid">
+                <div class="feature">
+                    <i class="fas fa-car"></i>
+                    <h4>Automotive Services</h4>
+                    <p>Complete vehicle repair, maintenance, and servicing for all automotive needs</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-industry"></i>
+                    <h4>Industrial Equipment</h4>
+                    <p>Repair and maintenance of industrial machinery and manufacturing equipment</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-search"></i>
+                    <h4>Diagnostics</h4>
+                    <p>Advanced diagnostic services to identify and resolve mechanical issues</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Performance</h4>
+                    <p>System optimization for improved performance and energy efficiency</p>
+                </div>
+            </div>
+            
+            <div class="service-cta">
+                <a href="contact.html" class="cta-button">Request Mechanical Service</a>
+                <a href="tel:+25429569748" class="cta-button secondary">
+                    <i class="fas fa-calendar-alt"></i> Schedule Service
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Civil Works Service -->
+    <section class="service-section alt-bg" id="civil-works">
+        <div class="container">
+            <div class="service-header">
+                <div class="service-icon-large">
+                    <i class="fas fa-hard-hat"></i>
+                </div>
+                <h2>Civil Works & Construction</h2>
+                <p class="service-description">Comprehensive civil engineering and construction services for residential, commercial, and infrastructure projects. From planning to execution, we deliver quality construction that meets industry standards.</p>
+            </div>
+            
+            <!-- Service Sliding Gallery -->
+            <div class="service-gallery">
+                <div class="gallery-container">
+                    <div class="gallery-slider">
+                        <!-- Slide 1 -->
+                        <div class="gallery-slide active">
+                            <img src="masonryplumbing.jpg" alt="Construction Projects">
+                            <div class="slide-caption">
+                                <h4>Construction Projects</h4>
+                                <p>Building construction and development projects from foundation to completion</p>
+                            </div>
+                        </div>
+                        <!-- Slide 2 -->
+                        <div class="gallery-slide">
+                            <img src="mechanical1.jpg" alt="Road Works">
+                            <div class="slide-caption">
+                                <h4>Road Works</h4>
+                                <p>Road construction, maintenance, and repair services for public and private roads</p>
+                            </div>
+                        </div>
+                        <!-- Slide 3 -->
+                        <div class="gallery-slide">
+                            <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80" alt="Structural Engineering">
+                            <div class="slide-caption">
+                                <h4>Structural Engineering</h4>
+                                <p>Structural design, analysis, and implementation for buildings and infrastructure</p>
+                            </div>
+                        </div>
+                        <!-- Slide 4 -->
+                        <div class="gallery-slide">
+                            <img src="masonry.JPG" alt="Infrastructure Development">
+                            <div class="slide-caption">
+                                <h4>Infrastructure Development</h4>
+                                <p>Public infrastructure projects including drainage, utilities, and public works</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Gallery Controls -->
+                    <button class="gallery-prev"><i class="fas fa-chevron-left"></i></button>
+                    <button class="gallery-next"><i class="fas fa-chevron-right"></i></button>
+                    
+                    <!-- Gallery Dots -->
+                    <div class="gallery-dots">
+                        <span class="dot active" data-slide="0"></span>
+                        <span class="dot" data-slide="1"></span>
+                        <span class="dot" data-slide="2"></span>
+                        <span class="dot" data-slide="3"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="service-features-grid">
+                <div class="feature">
+                    <i class="fas fa-building"></i>
+                    <h4>Building Construction</h4>
+                    <p>Complete construction services for residential and commercial buildings</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-road"></i>
+                    <h4>Road Construction</h4>
+                    <p>Road works, pavement, and infrastructure development projects</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-drafting-compass"></i>
+                    <h4>Engineering Design</h4>
+                    <p>Structural engineering and architectural design services</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-project-diagram"></i>
+                    <h4>Project Management</h4>
+                    <p>Complete project management from planning to execution</p>
+                </div>
+            </div>
+            
+            <div class="service-cta">
+                <a href="contact.html" class="cta-button">Request Civil Works Service</a>
+                <a href="tel:+25429569748" class="cta-button secondary">
+                    <i class="fas fa-file-alt"></i> Get Project Quote
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
     <section class="services-cta">
         <div class="container">
             <div class="cta-content">
-                <h2>Ready to Transform Your Project?</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+                <h2>Ready to Start Your Project?</h2>
+                <p>Contact us today for a free consultation and quote. Our team of experts is ready to discuss your project requirements and provide professional solutions tailored to your needs.</p>
                 <div class="cta-buttons">
                     <a href="contact.html" class="cta-button">Get Free Consultation</a>
                     <a href="tel:+25429569748" class="cta-button secondary">
@@ -352,7 +413,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>SilvaTech Institute</h3>
+                    <h3>Silva Tec Enterprises</h3>
                     <p>A member of the Technosam Group since 2015. Combining professional technical services with exceptional trade education.</p>
                     <a href="https://www.technosamservices.com/" target="_blank" class="footer-samtech-link">
                         <i class="fas fa-external-link-alt"></i> Visit technosamservices.com
@@ -378,7 +439,7 @@
                         </li>
                         <li>
                             <i class="fas fa-envelope"></i>
-                            <span>services@silvatechinstitute.edu</span>
+                            <span>services@silvatecenterprises.com</span>
                         </li>
                         <li>
                             <i class="fas fa-clock"></i>
@@ -403,7 +464,7 @@
             </div>
             
             <div class="copyright">
-                <p>&copy; 2023 SilvaTech Institute. A Technosam Services Company. All rights reserved.</p>
+                <p>&copy; 2023 Silva Tec Enterprises. A Technosam Services Company. All rights reserved.</p>
                 <p style="margin-top: 10px; font-size: 0.8rem;">
                     <a href="https://www.technosamservices.com/privacy" target="_blank" style="color: rgba(255,255,255,0.7); text-decoration: none; margin: 0 10px;">Privacy Policy</a> | 
                     <a href="https://www.technosamservices.com/terms" target="_blank" style="color: rgba(255,255,255,0.7); text-decoration: none; margin: 0 10px;">Terms of Service</a> | 
