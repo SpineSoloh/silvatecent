@@ -1,249 +1,311 @@
-// Services Page JavaScript
+// ============================================
+// SERVICES PAGE JAVASCRIPT
+// Image Slider Functionality
+// ============================================
+
 document.addEventListener('DOMContentLoaded', function() {
-    // ============================================
-    // HERO SLIDER FUNCTIONALITY
-    // ============================================
+    // Initialize all service galleries
+    initServiceGalleries();
     
-    const slides = document.querySelectorAll('.slide');
-    const dots = document.querySelectorAll('.dot');
-    const prevBtn = document.getElementById('prevSlide');
-    const nextBtn = document.getElementById('nextSlide');
-    const autoplayBtn = document.getElementById('toggleAutoplay');
-    const autoplayIcon = document.getElementById('autoplayIcon');
+    // Initialize mobile menu if it exists
+    initMobileMenu();
     
-    let currentSlide = 0;
-    let autoplayInterval;
-    let isAutoplay = true;
-    const slideDuration = 5000; // 5 seconds per slide
+    // Smooth scrolling for navigation links
+    initSmoothScrolling();
     
-    // Initialize slider
-    function initSlider() {
-        updateSlider();
-        startAutoplay();
+    // Add active state to current service in navigation
+    highlightCurrentService();
+});
+
+// ============================================
+// SERVICE GALLERIES
+// ============================================
+
+function initServiceGalleries() {
+    const galleries = document.querySelectorAll('.service-gallery');
+    
+    galleries.forEach(gallery => {
+        const slider = gallery.querySelector('.gallery-slider');
+        const slides = gallery.querySelectorAll('.gallery-slide');
+        const dots = gallery.querySelectorAll('.gallery-dots .dot');
+        const prevBtn = gallery.querySelector('.gallery-prev');
+        const nextBtn = gallery.querySelector('.gallery-next');
         
-        // Add click handlers for dots
-        dots.forEach(dot => {
-            dot.addEventListener('click', function() {
-                const slideIndex = parseInt(this.getAttribute('data-slide'));
-                goToSlide(slideIndex);
-                resetAutoplay();
+        let currentSlide = 0;
+        const totalSlides = slides.length;
+        
+        // Initialize slider
+        updateSlider();
+        
+        // Previous button event
+        if (prevBtn) {
+            prevBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                updateSlider();
+            });
+        }
+        
+        // Next button event
+        if (nextBtn) {
+            nextBtn.addEventListener('click', () => {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateSlider();
+            });
+        }
+        
+        // Dot navigation events
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentSlide = index;
+                updateSlider();
             });
         });
         
-        // Previous button
-        prevBtn.addEventListener('click', function() {
-            goToPrevSlide();
-            resetAutoplay();
-        });
-        
-        // Next button
-        nextBtn.addEventListener('click', function() {
-            goToNextSlide();
-            resetAutoplay();
-        });
-        
-        // Autoplay toggle
-        autoplayBtn.addEventListener('click', toggleAutoplay);
-        
-        // Pause autoplay on hover
-        const heroSlider = document.querySelector('.hero-slider');
-        heroSlider.addEventListener('mouseenter', pauseAutoplay);
-        heroSlider.addEventListener('mouseleave', function() {
-            if (isAutoplay) {
-                startAutoplay();
-            }
-        });
-    }
-    
-    // Go to specific slide
-    function goToSlide(n) {
-        currentSlide = (n + slides.length) % slides.length;
-        updateSlider();
-    }
-    
-    // Go to next slide
-    function goToNextSlide() {
-        goToSlide(currentSlide + 1);
-    }
-    
-    // Go to previous slide
-    function goToPrevSlide() {
-        goToSlide(currentSlide - 1);
-    }
-    
-    // Update slider display
-    function updateSlider() {
-        // Remove active class from all slides and dots
-        slides.forEach(slide => slide.classList.remove('active'));
-        dots.forEach(dot => dot.classList.remove('active'));
-        
-        // Add active class to current slide and dot
-        slides[currentSlide].classList.add('active');
-        dots[currentSlide].classList.add('active');
-    }
-    
-    // Autoplay functions
-    function startAutoplay() {
-        if (!autoplayInterval) {
-            autoplayInterval = setInterval(goToNextSlide, slideDuration);
-            autoplayIcon.classList.remove('fa-play');
-            autoplayIcon.classList.add('fa-pause');
+        // Auto-rotate slides (optional)
+        let autoSlideInterval;
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(() => {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateSlider();
+            }, 5000); // Change slide every 5 seconds
         }
-    }
-    
-    function pauseAutoplay() {
-        if (autoplayInterval) {
-            clearInterval(autoplayInterval);
-            autoplayInterval = null;
-            autoplayIcon.classList.remove('fa-pause');
-            autoplayIcon.classList.add('fa-play');
+        
+        function stopAutoSlide() {
+            clearInterval(autoSlideInterval);
         }
-    }
-    
-    function toggleAutoplay() {
-        if (autoplayInterval) {
-            pauseAutoplay();
-            isAutoplay = false;
-        } else {
-            startAutoplay();
-            isAutoplay = true;
-        }
-    }
-    
-    function resetAutoplay() {
-        if (isAutoplay) {
-            pauseAutoplay();
-            startAutoplay();
-        }
-    }
-    
-    // ============================================
-    // SMOOTH SCROLL FOR ANCHOR LINKS
-    // ============================================
-    
-    // Smooth scrolling for internal anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
+        
+        // Pause auto-slide on hover
+        gallery.addEventListener('mouseenter', stopAutoSlide);
+        gallery.addEventListener('mouseleave', startAutoSlide);
+        
+        // Start auto-slide
+        startAutoSlide();
+        
+        // Update slider function
+        function updateSlider() {
+            // Update slider position
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
             
-            // Only process if it's an internal link on this page
-            if (href !== '#' && href.startsWith('#') && document.querySelector(href)) {
-                e.preventDefault();
-                
-                const targetElement = document.querySelector(href);
-                const headerOffset = 100;
-                const elementPosition = targetElement.offsetTop;
-                const offsetPosition = elementPosition - headerOffset;
-                
-                window.scrollTo({
-                    top: offsetPosition,
-                    behavior: 'smooth'
-                });
-                
-                // Close mobile menu if open
-                const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-                const mainNav = document.getElementById('mainNav');
-                if (mainNav.classList.contains('active')) {
-                    mainNav.classList.remove('active');
-                    const icon = mobileMenuBtn.querySelector('i');
-                    icon.classList.remove('fa-times');
-                    icon.classList.add('fa-bars');
+            // Update active slide
+            slides.forEach((slide, index) => {
+                if (index === currentSlide) {
+                    slide.classList.add('active');
+                } else {
+                    slide.classList.remove('active');
                 }
+            });
+            
+            // Update dots
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add('active');
+                } else {
+                    dot.classList.remove('active');
+                }
+            });
+        }
+        
+        // Touch swipe functionality for mobile
+        let touchStartX = 0;
+        let touchEndX = 0;
+        
+        slider.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, { passive: true });
+        
+        slider.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, { passive: true });
+        
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            
+            if (touchStartX - touchEndX > swipeThreshold) {
+                // Swipe left - next slide
+                currentSlide = (currentSlide + 1) % totalSlides;
+            } else if (touchEndX - touchStartX > swipeThreshold) {
+                // Swipe right - previous slide
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            }
+            
+            updateSlider();
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (!gallery.matches(':hover')) return;
+            
+            if (e.key === 'ArrowLeft') {
+                currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+                updateSlider();
+            } else if (e.key === 'ArrowRight') {
+                currentSlide = (currentSlide + 1) % totalSlides;
+                updateSlider();
             }
         });
     });
-    
-    // ============================================
-    // SERVICE CARDS ANIMATION
-    // ============================================
-    
-    // Intersection Observer for service cards animation
-    const serviceCards = document.querySelectorAll('.service-detail-card');
-    
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-    
-    // Initialize cards with animation styles
-    serviceCards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(30px)';
-        card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        card.style.transitionDelay = `${index * 0.1}s`;
-        observer.observe(card);
-    });
-    
-    // ============================================
-    // MOBILE MENU TOGGLE (Same as main page)
-    // ============================================
-    
+}
+
+// ============================================
+// MOBILE MENU FUNCTIONALITY
+// ============================================
+
+function initMobileMenu() {
     const mobileMenuBtn = document.getElementById('mobileMenuBtn');
     const mainNav = document.getElementById('mainNav');
     
     if (mobileMenuBtn && mainNav) {
         mobileMenuBtn.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
-            const icon = mobileMenuBtn.querySelector('i');
-            if (mainNav.classList.contains('active')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
+            mainNav.classList.toggle('show');
+            mobileMenuBtn.innerHTML = mainNav.classList.contains('show') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
         });
         
-        // Close mobile menu when clicking on a link
-        const navLinks = mainNav.querySelectorAll('a');
+        // Close menu when clicking on a link
+        const navLinks = mainNav.querySelectorAll('.nav-link');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
-                mainNav.classList.remove('active');
-                const icon = mobileMenuBtn.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
+                mainNav.classList.remove('show');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
             });
         });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mainNav.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                mainNav.classList.remove('show');
+                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
     }
-    
-    // ============================================
-    // HEADER SCROLL EFFECT
-    // ============================================
-    
-    window.addEventListener('scroll', () => {
-        const header = document.querySelector('header');
-        if (window.scrollY > 100) {
-            header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
-        } else {
-            header.style.boxShadow = '0 2px 5px rgba(0, 0, 0, 0.05)';
-        }
+}
+
+// ============================================
+// SMOOTH SCROLLING
+// ============================================
+
+function initSmoothScrolling() {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            
+            // Skip if it's just "#" or external link
+            if (href === '#' || href.startsWith('http')) return;
+            
+            e.preventDefault();
+            const targetElement = document.querySelector(href);
+            
+            if (targetElement) {
+                // Get header height for offset
+                const headerHeight = document.querySelector('header').offsetHeight;
+                const targetPosition = targetElement.offsetTop - headerHeight;
+                
+                window.scrollTo({
+                    top: targetPosition,
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
+}
+
+// ============================================
+// HIGHLIGHT CURRENT SERVICE
+// ============================================
+
+function highlightCurrentService() {
+    const serviceSections = document.querySelectorAll('.service-section');
+    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
     
-    // ============================================
-    // INITIALIZE EVERYTHING
-    // ============================================
+    // Create an Intersection Observer
+    const observer = new IntersectionObserver(
+        (entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const sectionId = entry.target.id;
+                    
+                    // Update navigation links
+                    navLinks.forEach(link => {
+                        if (link.getAttribute('href') === `#${sectionId}`) {
+                            link.classList.add('active');
+                        } else if (link.getAttribute('href').startsWith('#')) {
+                            link.classList.remove('active');
+                        }
+                    });
+                }
+            });
+        },
+        {
+            threshold: 0.5,
+            rootMargin: '-80px 0px -80% 0px' // Adjust based on header height
+        }
+    );
     
-    initSlider();
-    
-    // Logo hover effect
-    const logoImg = document.getElementById('logo-img');
-    if (logoImg) {
-        logoImg.addEventListener('mouseenter', function() {
-            this.style.transform = 'rotate(360deg)';
-            this.style.transition = 'transform 0.5s ease';
+    // Observe each service section
+    serviceSections.forEach(section => {
+        observer.observe(section);
+    });
+}
+
+// ============================================
+// IMAGE LAZY LOADING (Optional Enhancement)
+// ============================================
+
+function initLazyLoading() {
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.add('loaded');
+                    observer.unobserve(img);
+                }
+            });
         });
         
-        logoImg.addEventListener('mouseleave', function() {
-            this.style.transform = 'rotate(0deg)';
+        document.querySelectorAll('.gallery-slide img[data-src]').forEach(img => {
+            imageObserver.observe(img);
         });
     }
+}
+
+// ============================================
+// PRELOAD IMAGES FOR SMOOTH TRANSITIONS
+// ============================================
+
+function preloadGalleryImages() {
+    const galleries = document.querySelectorAll('.service-gallery');
+    
+    galleries.forEach(gallery => {
+        const images = gallery.querySelectorAll('img');
+        images.forEach(img => {
+            const image = new Image();
+            image.src = img.src;
+        });
+    });
+}
+
+// Initialize additional features when window loads
+window.addEventListener('load', function() {
+    // Preload images for smoother transitions
+    preloadGalleryImages();
+    
+    // Initialize lazy loading
+    initLazyLoading();
+});
+
+// ============================================
+// RESIZE HANDLER
+// ============================================
+
+let resizeTimeout;
+window.addEventListener('resize', function() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        // Reinitialize galleries on resize
+        initServiceGalleries();
+    }, 250);
 });
