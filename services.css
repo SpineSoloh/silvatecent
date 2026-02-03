@@ -1,0 +1,463 @@
+/* ============================================
+   SERVICES PAGE SPECIFIC STYLES
+   ============================================ */
+
+/* Hero Slider */
+.services-hero {
+    height: 80vh;
+    min-height: 600px;
+    margin-top: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-slider {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.slide-content {
+    max-width: 800px;
+    padding: 0 20px;
+    color: white;
+    transform: translateY(20px);
+    transition: transform 0.8s ease;
+}
+
+.slide.active .slide-content {
+    transform: translateY(0);
+}
+
+.slide-title {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.slide-description {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+.slide-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background-color: var(--secondary);
+    color: white;
+    padding: 15px 30px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.slide-cta:hover {
+    background-color: white;
+    color: var(--primary);
+    transform: translateY(-3px);
+}
+
+/* Slider Controls */
+.slider-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transition);
+    backdrop-filter: blur(5px);
+}
+
+.slider-control:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.slider-control.prev {
+    left: 20px;
+}
+
+.slider-control.next {
+    right: 20px;
+}
+
+/* Slider Dots */
+.slider-dots {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 15px;
+    z-index: 10;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.dot.active {
+    background-color: white;
+    transform: scale(1.3);
+}
+
+.dot:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Autoplay Control */
+.autoplay-control {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    z-index: 10;
+}
+
+#toggleAutoplay {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transition);
+    backdrop-filter: blur(5px);
+}
+
+#toggleAutoplay:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Services Details */
+.services-details {
+    padding: 80px 0;
+    background-color: var(--light);
+}
+
+.service-detail-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    padding: 50px;
+    margin-bottom: 60px;
+    box-shadow: var(--shadow);
+}
+
+.service-detail-content {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 30px;
+}
+
+.service-detail-text {
+    flex: 1;
+}
+
+.service-detail-text h3 {
+    color: var(--primary);
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 3px solid var(--secondary);
+}
+
+.service-intro {
+    font-size: 1.2rem;
+    color: var(--gray);
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+.service-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.feature {
+    text-align: center;
+    padding: 25px;
+    background-color: #f8f9fa;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.feature i {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+.feature h4 {
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+}
+
+.feature p {
+    color: var(--gray);
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.service-benefits {
+    background-color: var(--primary);
+    color: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    margin-top: 30px;
+}
+
+.service-benefits h4 {
+    color: white;
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+}
+
+.service-benefits ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.service-benefits li {
+    margin-bottom: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.service-benefits i {
+    color: var(--secondary);
+    margin-top: 5px;
+    flex-shrink: 0;
+}
+
+.service-detail-image {
+    flex: 1;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.service-detail-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.service-detail-image:hover img {
+    transform: scale(1.05);
+}
+
+.service-cta {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Services CTA Section */
+.services-cta {
+    padding: 80px 0;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    text-align: center;
+}
+
+.cta-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.cta-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.cta-content p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    line-height: 1.7;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Active Navigation Link */
+nav ul li a.active {
+    color: var(--secondary);
+}
+
+nav ul li a.active:after {
+    width: 100%;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN FOR SERVICES PAGE
+   ============================================ */
+
+@media (max-width: 991px) {
+    .slide-title {
+        font-size: 2.8rem;
+    }
+    
+    .slide-description {
+        font-size: 1.1rem;
+    }
+    
+    .service-detail-content {
+        flex-direction: column;
+    }
+    
+    .service-detail-image {
+        order: -1;
+        margin-bottom: 30px;
+    }
+    
+    .service-detail-card {
+        padding: 30px;
+    }
+    
+    .slider-control {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .services-hero {
+        height: 70vh;
+        min-height: 500px;
+    }
+    
+    .slide-title {
+        font-size: 2.2rem;
+    }
+    
+    .slide-description {
+        font-size: 1rem;
+    }
+    
+    .slider-control {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .service-detail-card {
+        padding: 20px;
+        margin-bottom: 40px;
+    }
+    
+    .service-features {
+        grid-template-columns: 1fr;
+    }
+    
+    .cta-content h2 {
+        font-size: 2.2rem;
+    }
+    
+    .service-cta {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .slider-dots {
+        bottom: 20px;
+    }
+    
+    .autoplay-control {
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+@media (max-width: 575px) {
+    .services-hero {
+        height: 60vh;
+        min-height: 400px;
+    }
+    
+    .slide-title {
+        font-size: 1.8rem;
+    }
+    
+    .slide-content {
+        padding: 0 15px;
+    }
+    
+    .slide-cta {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+    
+    .cta-content h2 {
+        font-size: 1.8rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-buttons .cta-button {
+        width: 100%;
+        max-width: 300px;
+    }
+}
